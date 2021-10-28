@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang=en-us>
+  <head>
+  <meta charset=utf-8>
+  <title>Blurhash</title>
+</head>
+<body>
+<script type="module">
+import { decode } from "./_snowpack/pkg/blurhash.js";
+const pixels = decode("LEHV6nWB2yk8pyo0adR*.7kCMdnj", 32, 32);
+const canvas = document.createElement("canvas");
+const ctx = canvas.getContext("2d");
+const imageData = ctx.createImageData(32, 32);
+imageData.data.set(pixels);
+ctx.putImageData(imageData, 0, 0);
+document.body.append(canvas);
+</script>
+</body>
+</html>
